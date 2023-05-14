@@ -30,7 +30,7 @@ const monthSchema = new Schema({
         currency: "USD",
         get: (v) => v / 100
     },
-    OperationalExpenses: {
+    operationalExpenses: {
         type: mongoose.Types.Currency,
         currency: "USD",
         get: (v) => v / 100
@@ -58,7 +58,7 @@ const KPISchema = new Schema({
         currency: "USD",
         get: (v) => v / 100
     },
-    expenseByCategory: {
+    expensesByCategory: {
         type: Map,
         of: {
             type: mongoose.Types.Currency,
@@ -68,7 +68,7 @@ const KPISchema = new Schema({
     },
     monthlyData: [monthSchema],
     dailyData: [daySchema],
-}, { timestamps: true, toJSON: true });
+}, { timestamps: true, toJSON: { getters: true }});
 
 const KPI = mongoose.model('KPI', KPISchema);
 
