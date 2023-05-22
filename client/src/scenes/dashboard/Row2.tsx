@@ -1,10 +1,8 @@
 import DashboardBox from '@/components/DashboardBox';
+import { useGetProductsQuery } from '@/state/api';
 
-type Props = {
-    
-}
-
-const Row2 = (props: Props) => {
+const Row2 = () => {
+    const { data } = useGetProductsQuery();
     return (
         <>
             <DashboardBox bgcolor="#fff" gridArea="d"></DashboardBox>
