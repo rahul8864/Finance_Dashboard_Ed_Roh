@@ -7,9 +7,11 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import kpiRoutes from './routes/kpi.js';
 import KPI from './models/KPI.js';
-import { kpis, products } from './data/data.js';
+import { kpis, products, transactions } from './data/data.js';
 import productRoutes from './routes/product.mjs'
+import transactionRoutes from './routes/transaction.mjs'
 import Product from './models/Product.mjs';
+import Transaction from './models/Transaction.mjs';
 
 // CONFIGURATION
 
@@ -26,6 +28,7 @@ app.use(cors());
 // ROUTES
 app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
+app.use("/transaction", transactionRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
@@ -40,6 +43,7 @@ mongoose.connect(process.env.MONGODB_URL, {
     // await mongoose.connection.db.dropDatabase();
     // KPI.insertMany(kpis);
     // Product.insertMany(products);
+    // Transaction.insertMany(transactions);
 })
 .catch(err => console.log(`${err} did not Connected`));
 
