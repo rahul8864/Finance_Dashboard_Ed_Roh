@@ -23,7 +23,7 @@ const Predications = () => {
             return {
                 name: month,
                 "Actual Revenue": revenue,
-                "Regression": regressionLine.points[i][1],
+                "Regression Line": regressionLine.points[i][1],
                 "Predicted Revenue": regressionLine.predict(i + 12)[1]
             }
         })
