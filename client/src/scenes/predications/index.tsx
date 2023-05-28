@@ -10,7 +10,7 @@ const Predications = () => {
     const [isPredictions, setIsPredications] = useState(false);
     const { data: kpisData } = useGetKpisQuery();
 
-    const fromattedData = useMemo(() => {
+    const formattedData = useMemo(() => {
         if(!kpisData) return [];
         const monthData = kpisData[0].monthlyData;
         const formatted: Array<DataPoint> = monthData.map(
@@ -43,7 +43,7 @@ const Predications = () => {
                 }}>Show Predicted Revenue for Next Year</Button>
             </FlexBetween>
             <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={fromattedData} margin={{
+                <LineChart data={formattedData} margin={{
                     top: 20,
                     right: 75,
                     left: 20,
