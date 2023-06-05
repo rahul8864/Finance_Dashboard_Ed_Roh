@@ -89,7 +89,7 @@ const Row3 = () => {
                         <Box key={`${data[0].name}-${i}`}>
                             <PieChart width={110} height={100}>
                                 <Pie data={data} dataKey='value' innerRadius={18} outerRadius={35} paddingAngle={2} stroke='none'>
-                                    {data?.map((entry, index) => (
+                                    {data?.map((_, index) => (
                                         <Cell key={`cell-${index}`} fill={pieColors[index]} />
                                     ))}
                                 </Pie>

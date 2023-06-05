@@ -1,6 +1,6 @@
 import DashboardBox from '@/components/DashboardBox';
 import { useGetKpisQuery, useGetProductsQuery } from '@/state/api';
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis, ZAxis } from 'recharts';
+import { CartesianGrid, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis, ZAxis } from 'recharts';
 import BoxHeader from '@/components/BoxHeader';
 import { useMemo } from 'react';
 import { useTheme } from '@mui/material/styles';
@@ -69,7 +69,7 @@ const Row2 = () => {
                             bottom: 0,
                         }}>
                         <Pie data={pieData} dataKey='value' innerRadius={18} outerRadius={38} paddingAngle={2} stroke='none'>
-                            {pieData?.map((entry, index) => (
+                            {pieData?.map((_, index) => (
                                 <Cell key={`cell-${index}`} fill={pieColors[index]} />
                             ))}
                         </Pie>

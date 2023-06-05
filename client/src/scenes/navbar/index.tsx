@@ -5,10 +5,7 @@ import FlexBetween from '@/components/FlexBetween';
 import { PixSharp } from '@mui/icons-material';
 import { Link } from 'react-router-dom'
 
-
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const { palette } = useTheme();
     const [selected, setSelected] = useState("dashboard");
     return (
