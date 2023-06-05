@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
 
-const DashboardBox = styled(Box)(({ theme }) => ({
+const DashboardBox = styled(Box)(() => ({
     // backgroundColor: theme.palette.background.light,
     backgroundColor: '#41f2d3',
     borderRadius: "1rem",
